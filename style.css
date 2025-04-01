@@ -130,6 +130,6 @@ h1 {
 @media(max-width:768px){
     body {
         justify-content: flex-start;
-        padding-top: 2rem;
+        padding-top: 3rem;
     }
 }
