@@ -1,0 +1,135 @@
+@font-face {
+    font-family: 'League Gothic Semi-Condensed';
+    src: url('/assets/League_Gothic_Semi_Condensed.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --gap: clamp(1.25rem, 3vw, 1.5rem);
+    --big-gap: clamp(2.5rem, 3vw, 2.75rem);
+    --outer-padding: 0 1rem;
+    --font: system-ui, sans-serif;
+    --body-font-size: clamp(1.2rem,3vw,1.4rem);
+    --heading-font-size: clamp(2.1rem, 5vw, 3.25rem);
+    --small-text-size: clamp(1.02rem,3vw,1.15rem);
+    --line-height: 1.5;
+    --primary-color: #161718;
+    --background-color: #FBFAF7;
+    --accent-color: #545454;
+}
+
+@media(prefers-color-scheme:dark) {
+    :root {
+    --primary-color: #D3CEC1;
+    --background-color: #161718;
+    --accent-color: #A3A3A3;
+    }
+    #password {
+        letter-spacing: .5px;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    background: none;
+    overscroll-behavior: none;
+}
+
+* + * {
+    margin-block-start: var(--gap);
+}
+
+.margins-off * {
+    margin-block-start: 0;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100dvh;
+    margin: unset;
+    padding: var(--outer-padding);
+    font-family: var(--font);
+    font-size: var(--body-font-size);
+    font-weight: 400;
+    font-style: normal;
+    line-height: var(--line-height);
+    color: var(--primary-color);
+    background-color: var(--background-color);
+}
+
+.acme-all-purpose-wrapper {
+    width: 100%;
+    max-width: var(--max-width);
+    text-align: center;
+}
+
+#big-ass-bull {
+    width: auto;
+    height: clamp(70px,12vw,110px);
+    margin-block-end: -.5rem;
+}
+
+p {
+    color: var(--accent-color);
+}
+
+h1 {
+    font-size: var(--heading-font-size);
+    font-weight: bold;
+    line-height: 1.1;
+    color: var(--primary-color);
+}
+
+#password {
+    display: inline-block;
+    max-width: 100%;
+    margin-block-start: calc(var(--big-gap) + 1rem);
+    font-family: "League Gothic Semi-Condensed";
+    font-size: clamp(3rem,8vw,7rem);
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.fixey {
+    display: flex;
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translate(-50%);
+    width: 100%;
+}
+
+.fixey p {
+    width: 100%;
+}
+
+#bubba-crown {
+    width: auto;
+    height: clamp(18px,10vw,20px);
+    margin-left: .5rem;
+}
+
+@media(min-width:769px){
+    .acme-all-purpose-wrapper {
+        margin-block-start: clamp(-140px,18vw,-180px);  
+    }
+}
+
+@media(max-width:768px){
+    body {
+        justify-content: flex-start;
+        padding-top: 2rem;
+    }
+}
