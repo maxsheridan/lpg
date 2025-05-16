@@ -17,14 +17,14 @@
     --line-height: 1.5;
     --primary-color: #161718;
     --background-color: #FBFAF7;
-    --accent-color: #545454;
+    --accent-color: #8D8C8C;
 }
 
 @media(prefers-color-scheme:dark) {
     :root {
     --primary-color: #D3CEC1;
     --background-color: #161718;
-    --accent-color: #A3A3A3;
+    --accent-color: #8D8C8C;
     }
     #password {
         letter-spacing: .5px;
@@ -81,9 +81,24 @@ body {
     margin-block-end: -.5rem;
 }
 
-p {
-    color: var(--accent-color);
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    text-decoration-thickness: 2px;
+    text-decoration-color: var(--accent-color);
+    text-underline-offset: 2px;
+    text-decoration-skip-ink: all;
+    pointer-events: auto;
+    cursor: pointer;
+    transition: background-color .3s ease;
 }
+
+@media (hover:hover) and (pointer:fine) {
+    a:hover {
+        opacity: .6;
+    }
+}
+
 
 h1 {
     font-size: var(--heading-font-size);
