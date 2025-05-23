@@ -44,7 +44,7 @@
     margin-block-start: var(--gap);
 }
 
-.margins-off * {
+.margins-off  > * {
     margin-block-start: 0;
 }
 
