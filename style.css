@@ -51,7 +51,7 @@ html {
 }
 
 body {
-    min-height: 100vh;
+    min-height: 100dvh;
     font-family: var(--font);
     font-size: var(--body-font-size);
     font-weight: 400;
@@ -67,7 +67,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-height: 100vh;
+    min-height: 100dvh;
     padding: 2rem 1rem;
 }
 
