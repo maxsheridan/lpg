@@ -10,8 +10,8 @@
     --gap: clamp(1.25rem,3vw,1.5rem);
     --big-gap: calc(var(--gap) * 2);
     --font: system-ui, sans-serif;
-    --body-font-size: clamp(1.2rem,3vw,1.4rem);
-    --heading-font-size: clamp(2.1rem,5vw,3.25rem);
+    --body-font-size: clamp(1.2rem,2vw,1.6rem);
+    --heading-font-size: clamp(1.5rem,5vw,3.25rem);
     --line-height: 1.5;
     --primary-color: #161718;
     --background-color: #FBFAF7;
@@ -90,7 +90,7 @@ main {
     max-width: 100%;
     margin-block-start: calc(var(--big-gap) + 1rem);
     font-family: "League Gothic Semi-Condensed";
-    font-size: clamp(3rem,8vw,7rem);
+    font-size: calc(var(--heading-font-size) * 1.5);
     line-height: 1;
     text-transform: uppercase;
 }
@@ -118,6 +118,7 @@ h1 {
     font-size: var(--heading-font-size);
     font-weight: bold;
     line-height: 1.1;
+    text-align: center;
     color: var(--primary-color);
 }
 
@@ -136,7 +137,6 @@ aside {
 #bubba-crown {
     width: auto;
     height: clamp(18px,10vw,20px);
-    margin-left: .5rem;
 }
 
 @media(max-width:768px){
