@@ -138,9 +138,3 @@ aside {
     width: auto;
     height: clamp(18px,10vw,20px);
 }
-
-@media(max-width:768px){
-    main {
-        justify-content: flex-start;
-    }
-}
