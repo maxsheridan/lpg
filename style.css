@@ -82,7 +82,6 @@ main {
 #logo {
     width: auto;
     height: clamp(70px,12vw,110px);
-    margin-block-end: -.5rem;
 }
 
 #password {
@@ -134,7 +133,7 @@ aside {
     margin-block-start: calc(var(--big-gap) + 1rem);
 }
 
-#bubba-crown {
+#crown {
     width: auto;
     height: clamp(18px,10vw,20px);
 }
