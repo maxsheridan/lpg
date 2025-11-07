@@ -10,18 +10,18 @@
     --gap: 1.5rem;
     --big-gap: 3rem;
     --font: system-ui, sans-serif;
-    --body-font-size: calc(1.05rem + .5vw);
-    --heading-font-size: calc(.9rem + 2.6vw);
-    --primary-color: #161718;
-    --background-color: #FBFAF7;
-    --accent-color: #8D8C8C;
+    --paragraph: calc(1.2rem + .5vw);
+    --heading: calc(1.4rem + 2vw);
+    --primary: #161718;
+    --background: #FBFAF7;
+    --accent: #8D8C8C;
 }
 
 @media(prefers-color-scheme:dark) {
     :root {
-    --primary-color: #D3CEC1;
-    --background-color: #161718;
-    --accent-color: #8D8C8C;
+    --primary: #D3CEC1;
+    --background: #161718;
+    --accent: #8D8C8C;
     }
     #password {
         letter-spacing: .5px;
@@ -50,14 +50,15 @@ html {
 }
 
 body {
+    height: 100vh;
     min-height: 100dvh;
     font-family: var(--font);
-    font-size: var(--body-font-size);
+    font-size: var(--paragraph);
     font-weight: 400;
     font-style: normal;
     line-height: 1.5;
-    color: var(--primary-color);
-    background-color: var(--background-color);
+    color: var(--primary);
+    background-color: var(--background);
 }
 
 .acme-all-purpose-wrapper {
@@ -65,10 +66,9 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
     min-height: 100vh;
     min-height: 100dvh;
-    padding: 2rem 1rem;
+    padding: 2rem 1.5rem;
 }
 
 main {
@@ -84,27 +84,30 @@ main {
     height: calc(4rem + 3vw);
 }
 
+h1 {
+    font-size: var(--heading);
+    font-weight: bold;
+    line-height: 1.1;
+    text-align: center;
+    color: var(--primary);
+}
+
 #password {
     display: inline-block;
     max-width: 100%;
-    margin-block-start: 4rem;
+    margin-block-start: calc(var(--gap) * 2);
     font-family: "League Gothic Semi-Condensed";
-    font-size: calc(var(--heading-font-size) * 1.5);
+    font-size: calc(var(--heading) * 1.25);
     line-height: 1;
     text-transform: uppercase;
 }
 
 a {
-    display: inline-block;
-    color: var(--primary-color);
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-    text-decoration-color: var(--accent-color);
-    text-underline-offset: 2px;
-    text-decoration-skip-ink: all;
-    pointer-events: auto;
+    display: inline;
+    color: var(--primary);
+    text-decoration: none;
     cursor: pointer;
-    transition: background-color .3s ease;
+    transition: opacity .2s ease;
 }
 
 @media (hover:hover) and (pointer:fine) {
@@ -113,20 +116,8 @@ a {
     }
 }
 
-h1 {
-    font-size: var(--heading-font-size);
-    font-weight: bold;
-    line-height: 1.1;
-    text-align: center;
-    color: var(--primary-color);
-}
-
 .red {
     color: #D71920;
-}
-
-.underline-off {
-    text-decoration: none;
 }
 
 aside {
@@ -136,4 +127,12 @@ aside {
 #crown {
     width: auto;
     height: 19px;
+}
+
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: .25rem;
 }
