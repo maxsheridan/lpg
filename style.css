@@ -124,9 +124,8 @@ aside {
     margin-block-start: 4rem;
 }
 
-#crown {
-    width: auto;
-    height: 19px;
+.small {
+    font-size: calc(var(--paragraph) * .9);
 }
 
 a:focus-visible,
