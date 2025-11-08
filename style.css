@@ -12,7 +12,7 @@
     --body: system-ui, sans-serif;
     --heading: 'League Gothic Semi-Condensed', impact, system-ui;
     --paragraph: calc(1.25rem + .5vw);
-    --heading-1: calc(1.75rem + 3vw);
+    --heading-1: calc(2.5rem + 3vw);
     --primary: #161718;
     --background: #FBFAF7;
     --highlight: #D71920;
@@ -84,7 +84,7 @@ main {
 
 #logo {
     width: auto;
-    height: calc(2.75rem + 4vw);
+    height: calc(3.75rem + 3.75vw);
 }
 
 h1 {
@@ -102,7 +102,7 @@ h1 {
     position: relative;
     max-width: 100%;
     font-family: var(--heading);
-    font-size: var(--heading-1);
+    font-size: calc(var(--heading-1) * .8);
     line-height: 1;
     text-transform: uppercase;
 }
