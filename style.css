@@ -82,6 +82,11 @@ main {
     align-items: center;
 }
 
+#logo {
+    width: auto;
+    height: calc(2.75rem + 4vw);
+}
+
 h1 {
     margin-block-start: .25rem;
     font-family: var(--heading);
