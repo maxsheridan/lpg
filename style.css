@@ -83,7 +83,7 @@ main {
 
 #logo {
     width: auto;
-    height: calc(3.75rem + 3.75vw);
+    height: calc(3.25rem + 3vw);
 }
 
 h1 {
