@@ -7,13 +7,15 @@
 }
 
 :root {
-    --gap: 1.5rem;
-    --big-gap: 3rem;
-    --font: system-ui, sans-serif;
-    --paragraph: calc(1.2rem + .5vw);
-    --heading: calc(1.4rem + 2vw);
+    --gap: 3rem;
+    --gap: clamp(3rem, 4vw, 4rem);
+    --body: system-ui, sans-serif;
+    --heading: 'League Gothic Semi-Condensed', impact, system-ui;
+    --paragraph: calc(1.25rem + .5vw);
+    --heading-1: calc(1.75rem + 3vw);
     --primary: #161718;
     --background: #FBFAF7;
+    --highlight: #D71920;
     --accent: #8D8C8C;
 }
 
@@ -21,6 +23,7 @@
     :root {
     --primary: #D3CEC1;
     --background: #161718;
+    --highlight: #F18387;
     --accent: #8D8C8C;
     }
     #password {
@@ -50,9 +53,9 @@ html {
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
     min-height: 100dvh;
-    font-family: var(--font);
+    font-family: var(--body);
     font-size: var(--paragraph);
     font-weight: 400;
     font-style: normal;
@@ -68,7 +71,7 @@ body {
     align-items: center;
     min-height: 100vh;
     min-height: 100dvh;
-    padding: 2rem 1.5rem;
+    padding: 4rem 1rem;
 }
 
 main {
@@ -79,13 +82,15 @@ main {
     align-items: center;
 }
 
-#logo {
+#logo{
     width: auto;
     height: calc(4rem + 3vw);
 }
 
 h1 {
-    font-size: var(--heading);
+    margin-block-start: .25rem;
+    font-family: var(--heading);
+    font-size: var(--heading-1);
     font-weight: bold;
     line-height: 1.1;
     text-align: center;
@@ -94,18 +99,38 @@ h1 {
 
 #password {
     display: inline-block;
+    position: relative;
     max-width: 100%;
-    margin-block-start: calc(var(--gap) * 2);
-    font-family: "League Gothic Semi-Condensed";
-    font-size: calc(var(--heading) * 1.25);
+    font-family: var(--heading);
+    font-size: var(--heading-1);
     line-height: 1;
     text-transform: uppercase;
 }
 
+#password[data-tooltip]::after {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-8px);
+    padding: .5rem 1rem;
+    border-radius: .25rem;
+    font-family: var(--body);
+    font-size: calc(var(--paragraph) * 0.7);
+    letter-spacing: normal;
+    text-transform: none;
+    white-space: nowrap;
+    color: var(--background);
+    background-color: var(--highlight);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .2s ease;
+    content: attr(data-tooltip);
+}
+
 a {
     display: inline;
-    color: var(--primary);
     text-decoration: none;
+    color: var(--primary);
     cursor: pointer;
     transition: opacity .2s ease;
 }
@@ -113,6 +138,22 @@ a {
 @media (hover:hover) and (pointer:fine) {
     a:hover {
         opacity: .6;
+    }
+    
+    #password[data-tooltip]:hover::after {
+        opacity: 1;
+    }
+}
+
+#copy-hint {
+    display: none;
+    margin-block-start: 1rem;
+    color: var(--highlight);
+}
+
+@media (hover: none) and (pointer: coarse) {
+    #copy-hint {
+        display: block;
     }
 }
 
@@ -125,13 +166,13 @@ aside {
 }
 
 .small {
-    font-size: calc(var(--paragraph) * .9);
+    font-size: calc(var(--paragraph) * .85);
 }
 
 a:focus-visible,
 button:focus-visible,
 [role="button"]:focus-visible {
-    outline: 3px solid var(--accent);
+    outline: 4px dotted var(--highlight);
     outline-offset: 3px;
     border-radius: .25rem;
 }
