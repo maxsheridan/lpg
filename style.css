@@ -11,7 +11,7 @@
     --gap: clamp(3rem, 4vw, 4rem);
     --body: system-ui, sans-serif;
     --heading: 'League Gothic Semi-Condensed', Impact, system-ui;
-    --heading-1: calc(2.5rem + 3vw);
+    --heading-1: calc(2.5rem + 2.75vw);
     --primary: #161718;
     --background: #FBFAF7;
     --highlight: #D71920;
@@ -161,7 +161,11 @@ a {
 }
 
 .small {
-    font-size: calc(var(--heading-1) * .35);
+    font-size: calc(var(--heading-1) * .375);
+}
+
+aside {
+    margin-block-start: var(--gap);
 }
 
 a:focus-visible,
