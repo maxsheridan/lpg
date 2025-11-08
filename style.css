@@ -82,11 +82,6 @@ main {
     align-items: center;
 }
 
-#logo{
-    width: auto;
-    height: calc(4rem + 3vw);
-}
-
 h1 {
     margin-block-start: .25rem;
     font-family: var(--heading);
@@ -159,10 +154,6 @@ a {
 
 .red {
     color: #D71920;
-}
-
-aside {
-    margin-block-start: 4rem;
 }
 
 .small {
