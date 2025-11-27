@@ -39,14 +39,6 @@
     overscroll-behavior: none;
 }
 
-main * + * {
-    margin-block-start: var(--gap);
-}
-
-.margins-off  > * {
-    margin-block-start: 0;
-}
-
 html {
     font-size: 16px;
 }
@@ -79,6 +71,10 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+main > * + * {
+    margin-block-start: var(--gap);
 }
 
 #logo {
