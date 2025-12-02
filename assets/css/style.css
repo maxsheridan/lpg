@@ -7,8 +7,7 @@
 }
 
 :root {
-    --gap: 3rem;
-    --gap: clamp(3rem, 4vw, 4rem);
+    --gap: calc(3rem + 1vw);
     --body: system-ui, sans-serif;
     --heading: 'League Gothic Semi-Condensed', Impact, system-ui;
     --heading-1: calc(2.5rem + 2.75vw);
@@ -79,7 +78,7 @@ main > * + * {
 
 #logo {
     width: auto;
-    height: calc(3.25rem + 3vw);
+    height: 2.8em;
 }
 
 h1 {
